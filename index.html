@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Leaflet.MultiOptionsPolyline Demo</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.1/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.1/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.min.js.map"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.js"></script>
+    <style>
+        html {
+
+            color: rgba(255, 255, 255, 0.87)!important;
+            background: #2c3036!important;
+        }
+        .activity{
+          padding: 10px;
+          margin-left: -26px;
+          border-radius: 4px;
+        }
+        .card .card-content {
+            background: #424448;
+            font-size: 19px;
+        }
+      .leaflet-bottom {
+          display: none!important;
+        }
+        @media (min-width: 768px) {
+            .map {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .map {
+                height: 250px;
+            }
+        }
+        div.row {
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h5 class="docs-heading">Application Development - Final Assignment</h5>
+    </div>
+
+  <div class="row">
+    <div class="col s6 m6">
+      <div class="card">
+          <div id="map1" class="map"></div>
+        <div class="card-content">
+          <div id="speed1"></p>
+        </div>
+        <div class="card-action">
+        <div class="activity" id="activity1"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s6 m6">
+    <div class="card">
+        <div id="map2" class="map"></div>
+      <div class="card-content">
+        <div id="speed2"></p>
+      </div>
+      <div class="card-action">
+        <div class="activity" id="activity2"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="col s6 m6">
+    <div class="card">
+        <div id="map3" class="map"></div>
+      <div class="card-content">
+        <div id="speed3"></p>
+      </div>
+      <div class="card-action">
+        <div class="activity" id="activity3"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="col s6 m6">
+    <div class="card">
+        <div id="map4" class="map"></div>
+      <div class="card-content">
+        <div id="speed4"></p>
+      </div>
+      <div class="card-action">
+      <div class="activity" id="activity4"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="col s6 m6">
+    <div class="card">
+        <div id="map5" class="map"></div>
+      <div class="card-content">
+        <div id="speed5"></p>
+      </div>
+      <div class="card-action">
+        <div class="activity" id="activity5"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="col s6 m6">
+    <div class="card">
+        <div id="map6" class="map"></div>
+      <div class="card-content">
+        <div id="speed6"></p>
+      </div>
+      <div class="card-action">
+        <div class="activity" id="activity6"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="col s6 m6">
+    <div class="card">
+        <div id="map7" class="map"></div>
+      <div class="card-content">
+        <div id="speed7"></p>
+      </div>
+      <div class="card-action">
+        <div class="activity" id="activity7"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="col s6 m6">
+    <div class="card">
+        <div id="map8" class="map"></div>
+      <div class="card-content">
+        <div id="speed8"></p>
+      </div>
+      <div class="card-action">
+        <div class="activity" id="activity8"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="col s6 m6">
+    <div class="card">
+        <div id="map9" class="map"></div>
+      <div class="card-content">
+        <div id="speed9"></p>
+      </div>
+      <div class="card-action">
+        <div class="activity" id="activity9"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="col s6 m6">
+    <div class="card">
+        <div id="map10" class="map"></div>
+      <div class="card-content">
+        <div id="speed10"></p>
+      </div>
+      <div class="card-action">
+        <div class="activity" id="activity10"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col s6 m6">
+  <div class="card">
+      <div id="map11" class="map"></div>
+    <div class="card-content">
+      <div id="speed11"></p>
+    </div>
+    <div class="card-action">
+      <div class="activity" id="activity11"></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="col s6 m6">
+  <div class="card">
+      <div id="map12" class="map"></div>
+    <div class="card-content">
+      <div id="speed12"></p>
+    </div>
+    <div class="card-action">
+      <div class="activity" id="activity12"></div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="lib/mapquest.js"></script>
+<script src="lib/Leaflet.MultiOptionsPolyline.js"></script>
+<script src="js/demo.js"></script>
+</body>
+</html>
